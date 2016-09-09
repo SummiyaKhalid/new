@@ -24,6 +24,10 @@
 // ========================
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
 define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/New/wp-content' );
+define('WPMU_PLUGIN_DIR',  dirname( __FILE__ ) . '/wp-content/mu-plugins');
+define('WPMU_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/New/wp-content/mu-plugins');
+
+
 
 define( 'WP_DEBUG_DISPLAY', true );
 define( 'WP_DEBUG', true );

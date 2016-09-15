@@ -95,6 +95,8 @@ $table_prefix  = 'wp_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', true);
+/** Define WordPress.com API Key */
+define('WPCOM_API_KEY','bc3f88a21e28');
 
 /* That's all, stop editing! Happy blogging. */
 

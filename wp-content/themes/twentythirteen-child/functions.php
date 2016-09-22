@@ -1,4 +1,9 @@
 <?php
+
+include('movies.php');
+include('taxonomy.php');
+include('books.php');
+
 function my_theme_enqueue_styles() {
 
     $parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
@@ -12,8 +17,15 @@ function my_theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 
-// New code
+function my_gallery_shortcode($atts) {
+	//return do_shortcode( '[gallery_bank type="images" format="thumbnail" title="true" desc="false" responsive="true" display="all" sort_by="random" animation_effect="" album_title="true" album_id="2"]' );
+ // var_dump(get_the_content()); die();
+  
+}
+//add_shortcode('gallery_bank','my_gallery_shortcode');
+ 
 
+// New code
 
 
 

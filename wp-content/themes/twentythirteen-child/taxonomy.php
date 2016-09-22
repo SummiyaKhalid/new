@@ -40,5 +40,4 @@ function create_genres_hierarchical_taxonomy() {
 
 
 
-
 ?>

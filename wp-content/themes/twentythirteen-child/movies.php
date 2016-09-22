@@ -94,4 +94,27 @@ add_action( 'save_post_movies', 'movies_save_post' );
 */
 
 add_action( 'init', 'custom_post_type', 0 );
+
+
+
+
+
+function my_updated_messages( $messages ) {
+  global $post, $post_ID;
+  $messages['movies'] = array(
+    0 => '', 
+    1 => sprintf( __('Movie updated. <a href="%s">View movie</a>'), esc_url( get_permalink($post_ID) ) ),
+    2 => __('Custom field updated.'),
+    3 => __('Custom field deleted.'),
+    4 => __('Movie updated.'),
+    5 => isset($_GET['revision']) ? sprintf( __('Movie restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+    6 => sprintf( __('Movie published. <a href="%s">View Movie</a>'), esc_url( get_permalink($post_ID) ) ),
+    7 => __('Movie saved.'),
+    8 => sprintf( __('Movie submitted. <a target="_blank" href="%s">Preview Movie</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+    9 => sprintf( __('Movie scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Movie</a>'), date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
+    10 => sprintf( __('Movie draft updated. <a target="_blank" href="%s">Preview Movie</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+  );
+  return $messages;
+}
+add_filter( 'post_updated_messages', 'my_updated_messages' );
  ?>

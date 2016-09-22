@@ -17,7 +17,9 @@ get_header();
 
 
 
-$args = array( 'post_type' => 'movies', 'posts_per_page' => 5 );
+$args = array( 'post_type' => 'movies', 'posts_per_page' => 5,'orderby' => 'meta_value','order' => 'ASC',
+            'meta_key'=> 'date',
+ );
 $loop = new WP_Query( $args );
 ?>
 

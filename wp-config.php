@@ -32,6 +32,9 @@ define('WPMU_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/New/wp-content/m
 define( 'WP_DEBUG_DISPLAY', true );
 define( 'WP_DEBUG', true );
 
+define('WP_HOME','http://localhost:8080/New/');
+define('WP_SITE','http://localhost:8080/New/wordpress/');
+
 
 
 
